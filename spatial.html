@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>مقياس الذكاء البصري المكاني</title>
+<meta name="description" content="اختبار تفاعلي من ٣٠ بندًا مرسومًا يقيس الاستدلال البصري والتدوير الذهني">
+<meta property="og:title" content="مقياس الذكاء البصري المكاني">
+<meta property="og:description" content="اختبار تفاعلي من ٣٠ بندًا مرسومًا يقيس الاستدلال البصري والتدوير الذهني">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2238%22%20height%3D%2238%22%20rx%3D%2210%22%20fill%3D%22%230E6B60%22%2F%3E%3Cpath%20d%3D%22M8%2027c4-9%208-9%2012%200s8%209%2012%200%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2213%22%20r%3D%223.2%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap">
+<style>
+:root{
+  --bg:#EEF2F1; --surface:#FFFFFF; --surface-2:#F6F8F8; --ink:#14232A; --muted:#5A6B71; --line:#D5DEDC;
+  --accent:#0E6B60; --accent-ink:#FFFFFF; --accent-soft:#DDEFEB; --amber:#A8691A; --amber-soft:#F6E9D5;
+  --b1:#B04A35; --b2:#C2842A; --b3:#7E8F93; --b4:#3A9483; --b5:#1D7A6D; --b6:#0B5A50;
+  --focus:#C2842A; --shadow:0 1px 2px rgba(20,35,42,.06),0 6px 24px -12px rgba(20,35,42,.18);
+  --display:"Reem Kufi","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,"Geeza Pro",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0D1517; --surface:#142024; --surface-2:#18262B; --ink:#E2EAE8; --muted:#94A6A9; --line:#26383D;
+    --accent:#3CB6A2; --accent-ink:#06201C; --accent-soft:#163632; --amber:#E2A54B; --amber-soft:#3A2B14;
+    --b1:#E07A62; --b2:#E2A54B; --b3:#9AABAE; --b4:#5CC0AD; --b5:#3CB6A2; --b6:#8BE0CF;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D1517; --surface:#142024; --surface-2:#18262B; --ink:#E2EAE8; --muted:#94A6A9; --line:#26383D;
+  --accent:#3CB6A2; --accent-ink:#06201C; --accent-soft:#163632; --amber:#E2A54B; --amber-soft:#3A2B14;
+  --b1:#E07A62; --b2:#E2A54B; --b3:#9AABAE; --b4:#5CC0AD; --b5:#3CB6A2; --b6:#8BE0CF;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px -14px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;margin:0}
+#app{max-width:960px;margin:0 auto;padding-inline:16px;padding-block:20px 64px;text-align:right}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.35;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:13px;letter-spacing:.02em;color:var(--muted);font-weight:500}
+
+/* الترويسة */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:6px 18px;border-bottom:1px solid var(--line);margin-bottom:28px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:40px;height:40px;flex:none}
+.brand h1{font-size:24px}
+.brand p{margin:0;font-size:13px;color:var(--muted)}
+.linkbtn{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--ink)}
+.linkbtn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* الصفحة الرئيسية */
+.intro{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start;margin-bottom:36px}
+.intro h2{font-size:34px;margin-bottom:10px}
+.intro p{margin:0 0 10px;max-width:60ch}
+.scale{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.scale h3{font-size:16px;margin-bottom:10px}
+.scale ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
+.scale li{display:grid;grid-template-columns:14px 78px 1fr;gap:10px;align-items:center}
+.sw{width:14px;height:14px;border-radius:4px}
+.section-h{display:flex;align-items:baseline;gap:12px;margin:8px 0 14px;flex-wrap:wrap}
+.section-h h2{font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:36px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;text-align:right;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card .code{font-family:var(--display);font-size:13px;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:1px 8px;align-self:flex-start}
+.card h3{font-size:19px}
+.card p{margin:0;font-size:14px;color:var(--muted);line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 9px;color:var(--muted)}
+.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:10px;border-top:1px dashed var(--line);font-size:14px}
+.status{font-weight:600}
+.status.done{color:var(--accent)}
+.status.prog{color:var(--amber)}
+.go{color:var(--accent);font-weight:600}
+.note{font-size:13.5px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;max-width:none}
+
+/* الاختبار */
+.testbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.testbar h2{font-size:22px}
+.progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:22px}
+.progress i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .25s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--shadow)}
+.qnum{font-family:var(--display);color:var(--accent);font-size:15px;margin-bottom:6px}
+.qtext{font-size:20px;font-weight:600;line-height:1.7;margin:0 0 20px;max-width:62ch}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:right;background:var(--surface-2);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16.5px;line-height:1.6;transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--accent)}
+.opt .let{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-size:15px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.sel .let{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.likert{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.likert .opt{flex-direction:column;justify-content:center;text-align:center;gap:6px;padding:12px 6px;font-size:14px;min-height:84px}
+.likert .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--muted)}
+.likert .opt.sel .dot{background:var(--accent);border-color:var(--accent)}
+.bipolar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.pole{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:17px;font-weight:600}
+.pole b{display:block;font-family:var(--display);color:var(--accent);font-size:14px;font-weight:600;margin-bottom:4px}
+.fig{display:flex;justify-content:center;margin:4px 0 20px;color:var(--ink)}
+.fig svg{max-width:100%;height:auto}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tiles.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tile{position:relative;background:var(--surface-2);border:1.5px solid var(--line);border-radius:12px;padding:10px 6px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--ink)}
+.tile:hover{border-color:var(--accent)}
+.tile svg{width:100%;max-width:110px;height:auto}
+.tile .let{font-family:var(--display);font-size:14px;color:var(--muted)}
+.tile.sel{border-color:var(--accent);background:var(--accent-soft)}
+.tile.sel .let{color:var(--accent)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 18px;font-weight:600}
+.btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover:not(:disabled){filter:brightness(1.08);color:var(--accent-ink)}
+.btn.warn{border-color:var(--b1);color:var(--b1)}
+.map{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.map button{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-size:13px;color:var(--muted)}
+.map button.ans{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.map button.cur{outline:2px solid var(--accent);outline-offset:1px;color:var(--ink)}
+.hint{font-size:13px;color:var(--muted);margin-top:10px}
+
+/* النتائج */
+.res-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}
+.score{text-align:center;min-width:150px}
+.score .big{font-family:var(--display);font-size:72px;line-height:1;font-weight:700;color:var(--bandc,var(--accent))}
+.score .lbl{font-size:13px;color:var(--muted);margin-top:6px}
+.band{display:inline-block;font-weight:700;border-radius:999px;padding:3px 14px;font-size:15px;color:var(--bandc);border:1.5px solid var(--bandc);margin-bottom:8px}
+.res-hero p{margin:4px 0}
+.curve{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 16px 8px;margin-bottom:18px;overflow-x:auto}
+.curve svg{display:block;width:100%;min-width:520px;height:auto}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:18px}
+.panel h3{font-size:19px;margin-bottom:12px}
+.panel p{margin:0 0 10px;max-width:70ch}
+.bars{display:grid;gap:14px}
+.bar-row{display:grid;grid-template-columns:minmax(120px,210px) 1fr 64px;gap:12px;align-items:center;font-size:15px}
+.bar{height:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--accent)}
+.bar-row .v{text-align:left;font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ul.clean{margin:0;padding-inline-start:20px}
+ul.clean li{margin-bottom:6px}
+.trait{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}
+.trait:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.trait h4{font-family:var(--display);font-size:17px;font-weight:600;margin:0 0 4px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.lvl{font-family:var(--body);font-size:13px;font-weight:600;border-radius:999px;padding:0 10px;background:var(--accent-soft);color:var(--accent)}
+.lvl.lo{background:var(--amber-soft);color:var(--amber)}
+.lvl.mid{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+.dual{display:grid;grid-template-columns:90px 1fr 90px;gap:10px;align-items:center;font-size:14px;margin-bottom:12px}
+.dual .track{position:relative;height:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px}
+.dual .track::after{content:"";position:absolute;top:-4px;bottom:-4px;left:50%;width:1px;background:var(--muted)}
+.dual .fill{position:absolute;top:0;bottom:0;border-radius:99px;background:var(--accent)}
+.dual .l{text-align:right}
+.dual .r{text-align:left}
+.dual .on{font-weight:700;color:var(--accent)}
+.typecode{font-family:var(--display);font-size:64px;letter-spacing:.06em;line-height:1;color:var(--accent);direction:ltr}
+.review{display:grid;gap:12px}
+.rv{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--surface-2)}
+.rv .h{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.rv .q{font-weight:600;margin:4px 0}
+.ok{color:var(--b5);font-weight:700}
+.no{color:var(--b1);font-weight:700}
+.rv .e{font-size:14px;color:var(--muted);margin:4px 0 0}
+.rv .figs{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0}
+.rv .figs svg{max-width:150px;height:auto;color:var(--ink)}
+.lock{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lock input{font:inherit;border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:10px;padding:8px 12px;width:200px;max-width:100%}
+.err{color:var(--b1);font-size:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.prof-table{width:100%;border-collapse:collapse;font-size:15px}
+.prof-table th,.prof-table td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:right}
+.prof-table th{font-size:13px;color:var(--muted);font-weight:500}
+.tablewrap{overflow-x:auto}
+.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+
+@media (max-width:760px){
+  .intro{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr}
+  .res-hero{grid-template-columns:1fr;text-align:center}
+  .cols{grid-template-columns:1fr}
+  .bipolar{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .intro h2{font-size:27px}
+  .qcard{padding:20px 16px}
+  .qtext{font-size:18px}
+  .likert{grid-template-columns:1fr}
+  .likert .opt{flex-direction:row;min-height:0;justify-content:flex-start;text-align:right;padding:10px 14px}
+  .tiles,.tiles.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bar-row{grid-template-columns:1fr 56px}
+  .bar-row .bar{grid-column:1/-1;grid-row:2}
+  .dual{grid-template-columns:70px 1fr 70px;font-size:13px}
+  .score .big{font-size:60px}
+  .nav [data-finish]{order:3;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="stripes" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">
+      <rect width="5" height="5" fill="none"/>
+      <line x1="0" y1="0" x2="0" y2="5" stroke="currentColor" stroke-width="2.2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div id="app" dir="rtl" lang="ar"></div>
+
+<script>
+const DATA={"spatial":[{"t":"mat","cells":[{"sh":"square","n":3,"f":"solid","z":"m"},{"sh":"square","n":3,"f":"solid","z":"m"},{"sh":"square","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"triangle","n":3,"f":"solid","z":"m"},{"sh":"triangle","n":3,"f":"solid","z":"m"}],"opts":[{"sh":"triangle","n":3,"f":"empty","z":"m"},{"sh":"square","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"triangle","n":3,"f":"solid","z":"m"},{"sh":"triangle","n":3,"f":"solid","z":"s"},{"sh":"triangle","n":3,"f":"striped","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"m"},{"sh":"diamond","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"m"},{"sh":"diamond","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"m"}],"opts":[{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"m"},{"sh":"diamond","n":2,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"solid","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,1],[1,1],[2,0],[2,1]],"opts":[[[0,0],[0,1],[1,1],[2,1]],[[0,0],[0,1],[1,0],[2,0]],[[0,0],[0,1],[0,2],[1,0]],[[0,0],[1,0],[2,0],[2,1]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"triangle","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"circle","n":3,"f":"striped","z":"m"},{"sh":"triangle","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"circle","n":3,"f":"striped","z":"m"},{"sh":"triangle","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"}],"opts":[{"sh":"circle","n":1,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"circle","n":3,"f":"striped","z":"s"},{"sh":"circle","n":3,"f":"solid","z":"m"},{"sh":"circle","n":3,"f":"striped","z":"m"},{"sh":"triangle","n":3,"f":"striped","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"hexagon","n":1,"f":"striped","z":"m"},{"sh":"circle","n":1,"f":"striped","z":"m"},{"sh":"triangle","n":1,"f":"striped","z":"m"},{"sh":"hexagon","n":1,"f":"empty","z":"m"},{"sh":"circle","n":1,"f":"empty","z":"m"},{"sh":"triangle","n":1,"f":"empty","z":"m"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"circle","n":1,"f":"solid","z":"m"}],"opts":[{"sh":"circle","n":1,"f":"striped","z":"m"},{"sh":"triangle","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"triangle","n":1,"f":"striped","z":"m"},{"sh":"triangle","n":1,"f":"empty","z":"m"},{"sh":"circle","n":1,"f":"solid","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":2,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":2,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":2,"f":"empty","z":"m"}],"opts":[{"sh":"hexagon","n":1,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":2,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"solid","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[0,1],[1,1],[1,2],[2,1]],"opts":[[[0,1],[1,0],[1,1],[1,2],[2,2]],[[0,0],[1,0],[1,1],[1,2],[2,1]],[[0,1],[1,0],[1,1],[2,1],[2,2]],[[0,1],[0,2],[1,0],[1,1],[2,1]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":2,"f":"empty","z":"m"},{"sh":"circle","n":1,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":2,"f":"empty","z":"m"},{"sh":"circle","n":1,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":2,"f":"empty","z":"m"}],"opts":[{"sh":"hexagon","n":1,"f":"empty","z":"m"},{"sh":"circle","n":1,"f":"empty","z":"m"},{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"circle","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":2,"f":"empty","z":"m"},{"sh":"circle","n":2,"f":"empty","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"hexagon","n":3,"f":"solid","z":"l"},{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"striped","z":"s"},{"sh":"hexagon","n":3,"f":"empty","z":"l"},{"sh":"hexagon","n":3,"f":"striped","z":"m"},{"sh":"hexagon","n":3,"f":"solid","z":"s"},{"sh":"hexagon","n":3,"f":"striped","z":"l"},{"sh":"hexagon","n":3,"f":"solid","z":"m"}],"opts":[{"sh":"hexagon","n":3,"f":"empty","z":"l"},{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"solid","z":"s"},{"sh":"hexagon","n":3,"f":"striped","z":"s"},{"sh":"hexagon","n":3,"f":"empty","z":"s"},{"sh":"hexagon","n":3,"f":"striped","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"triangle","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"square","n":3,"f":"solid","z":"m"},{"sh":"square","n":3,"f":"striped","z":"m"},{"sh":"triangle","n":3,"f":"striped","z":"m"},{"sh":"diamond","n":3,"f":"striped","z":"m"},{"sh":"diamond","n":3,"f":"empty","z":"m"},{"sh":"square","n":3,"f":"empty","z":"m"}],"opts":[{"sh":"square","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"empty","z":"m"},{"sh":"triangle","n":3,"f":"empty","z":"m"},{"sh":"triangle","n":3,"f":"striped","z":"m"},{"sh":"triangle","n":3,"f":"solid","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[0,1],[0,2],[0,3],[1,0]],"opts":[[[0,3],[1,0],[1,1],[1,2],[1,3]],[[0,0],[0,1],[1,0],[2,0],[3,0]],[[0,0],[0,1],[0,2],[0,3],[1,3]],[[0,0],[1,0],[1,1],[1,2],[1,3]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"diamond","n":2,"f":"striped","z":"m"},{"sh":"diamond","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"striped","z":"m"},{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"diamond","n":2,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"m"},{"sh":"diamond","n":2,"f":"empty","z":"m"}],"opts":[{"sh":"diamond","n":1,"f":"striped","z":"m"},{"sh":"diamond","n":3,"f":"striped","z":"m"},{"sh":"diamond","n":2,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":3,"f":"empty","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"circle","n":3,"f":"solid","z":"l"},{"sh":"circle","n":2,"f":"empty","z":"l"},{"sh":"circle","n":1,"f":"striped","z":"l"},{"sh":"circle","n":1,"f":"solid","z":"m"},{"sh":"circle","n":3,"f":"empty","z":"m"},{"sh":"circle","n":2,"f":"striped","z":"m"},{"sh":"circle","n":2,"f":"solid","z":"s"},{"sh":"circle","n":1,"f":"empty","z":"s"}],"opts":[{"sh":"circle","n":3,"f":"solid","z":"s"},{"sh":"circle","n":3,"f":"empty","z":"s"},{"sh":"circle","n":1,"f":"striped","z":"s"},{"sh":"circle","n":3,"f":"striped","z":"l"},{"sh":"circle","n":3,"f":"striped","z":"s"},{"sh":"circle","n":3,"f":"striped","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[0,1],[1,0],[1,1],[2,1],[2,2]],"opts":[[[0,2],[1,0],[1,1],[1,2],[2,0],[2,1]],[[0,0],[1,0],[1,1],[1,2],[2,1],[2,2]],[[0,1],[0,2],[1,0],[1,1],[2,0],[2,1]],[[0,0],[0,1],[1,0],[1,1],[1,2],[2,2]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"hexagon","n":3,"f":"striped","z":"s"},{"sh":"triangle","n":2,"f":"striped","z":"m"},{"sh":"square","n":1,"f":"striped","z":"l"},{"sh":"triangle","n":3,"f":"striped","z":"s"},{"sh":"square","n":2,"f":"striped","z":"m"},{"sh":"hexagon","n":1,"f":"striped","z":"l"},{"sh":"square","n":3,"f":"striped","z":"s"},{"sh":"hexagon","n":2,"f":"striped","z":"m"}],"opts":[{"sh":"triangle","n":3,"f":"striped","z":"l"},{"sh":"triangle","n":1,"f":"striped","z":"l"},{"sh":"triangle","n":1,"f":"striped","z":"m"},{"sh":"triangle","n":1,"f":"striped","z":"s"},{"sh":"hexagon","n":1,"f":"striped","z":"l"},{"sh":"square","n":1,"f":"striped","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"square","n":1,"f":"solid","z":"l"},{"sh":"diamond","n":1,"f":"solid","z":"m"},{"sh":"circle","n":1,"f":"solid","z":"s"},{"sh":"diamond","n":1,"f":"striped","z":"l"},{"sh":"circle","n":1,"f":"striped","z":"m"},{"sh":"square","n":1,"f":"striped","z":"s"},{"sh":"circle","n":1,"f":"empty","z":"l"},{"sh":"square","n":1,"f":"empty","z":"m"}],"opts":[{"sh":"square","n":1,"f":"empty","z":"s"},{"sh":"diamond","n":1,"f":"solid","z":"s"},{"sh":"circle","n":1,"f":"empty","z":"s"},{"sh":"diamond","n":1,"f":"empty","z":"s"},{"sh":"diamond","n":1,"f":"striped","z":"s"},{"sh":"diamond","n":1,"f":"empty","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"triangle","n":1,"f":"empty","z":"s"},{"sh":"square","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"l"},{"sh":"diamond","n":1,"f":"solid","z":"s"},{"sh":"triangle","n":1,"f":"striped","z":"m"},{"sh":"square","n":1,"f":"empty","z":"l"},{"sh":"square","n":1,"f":"striped","z":"s"},{"sh":"diamond","n":1,"f":"empty","z":"m"}],"opts":[{"sh":"diamond","n":1,"f":"solid","z":"l"},{"sh":"triangle","n":1,"f":"empty","z":"l"},{"sh":"triangle","n":1,"f":"striped","z":"l"},{"sh":"square","n":1,"f":"solid","z":"l"},{"sh":"triangle","n":1,"f":"solid","z":"l"},{"sh":"triangle","n":1,"f":"solid","z":"s"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,1],[0,3],[1,0],[1,1],[1,2],[1,3]],"opts":[[[0,0],[0,2],[1,0],[1,1],[1,2],[1,3]],[[0,0],[0,1],[1,1],[2,0],[2,1],[3,1]],[[0,0],[0,1],[1,0],[2,0],[2,1],[3,0]],[[0,1],[1,0],[1,1],[2,1],[3,0],[3,1]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"square","n":3,"f":"striped","z":"l"},{"sh":"diamond","n":3,"f":"empty","z":"m"},{"sh":"hexagon","n":3,"f":"solid","z":"s"},{"sh":"hexagon","n":3,"f":"solid","z":"l"},{"sh":"square","n":3,"f":"striped","z":"m"},{"sh":"diamond","n":3,"f":"empty","z":"s"},{"sh":"diamond","n":3,"f":"empty","z":"l"},{"sh":"hexagon","n":3,"f":"solid","z":"m"}],"opts":[{"sh":"square","n":3,"f":"empty","z":"s"},{"sh":"square","n":3,"f":"striped","z":"m"},{"sh":"square","n":3,"f":"striped","z":"s"},{"sh":"hexagon","n":3,"f":"striped","z":"s"},{"sh":"square","n":3,"f":"solid","z":"s"},{"sh":"square","n":3,"f":"striped","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"hexagon","n":3,"f":"empty","z":"l"},{"sh":"diamond","n":3,"f":"striped","z":"m"},{"sh":"circle","n":3,"f":"solid","z":"s"},{"sh":"circle","n":3,"f":"solid","z":"l"},{"sh":"hexagon","n":3,"f":"empty","z":"m"},{"sh":"diamond","n":3,"f":"striped","z":"s"},{"sh":"diamond","n":3,"f":"striped","z":"l"},{"sh":"circle","n":3,"f":"solid","z":"m"}],"opts":[{"sh":"diamond","n":3,"f":"empty","z":"s"},{"sh":"hexagon","n":3,"f":"solid","z":"s"},{"sh":"hexagon","n":3,"f":"empty","z":"s"},{"sh":"hexagon","n":3,"f":"empty","z":"l"},{"sh":"hexagon","n":3,"f":"striped","z":"s"},{"sh":"hexagon","n":3,"f":"empty","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[0,1],[0,2],[1,0],[1,2],[1,3]],"opts":[[[0,1],[0,2],[0,3],[1,0],[1,1],[1,3]],[[0,1],[1,0],[1,1],[2,0],[3,0],[3,1]],[[0,0],[1,0],[1,1],[2,1],[3,0],[3,1]],[[0,0],[0,2],[0,3],[1,0],[1,1],[1,2]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"square","n":1,"f":"empty","z":"s"},{"sh":"diamond","n":1,"f":"empty","z":"m"},{"sh":"triangle","n":1,"f":"empty","z":"l"},{"sh":"triangle","n":2,"f":"solid","z":"s"},{"sh":"square","n":2,"f":"solid","z":"m"},{"sh":"diamond","n":2,"f":"solid","z":"l"},{"sh":"diamond","n":3,"f":"striped","z":"s"},{"sh":"triangle","n":3,"f":"striped","z":"m"}],"opts":[{"sh":"square","n":3,"f":"solid","z":"l"},{"sh":"square","n":1,"f":"striped","z":"l"},{"sh":"square","n":3,"f":"striped","z":"s"},{"sh":"triangle","n":3,"f":"striped","z":"l"},{"sh":"square","n":3,"f":"striped","z":"l"},{"sh":"diamond","n":3,"f":"striped","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[0,1],[0,2],[1,1],[1,2],[2,1],[2,2]],"opts":[[[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[2,2]],[[0,0],[0,1],[1,0],[1,1],[2,0],[2,1],[2,2]],[[0,1],[0,2],[1,1],[1,2],[2,0],[2,1],[2,2]],[[0,0],[0,1],[0,2],[1,0],[1,1],[2,0],[2,1]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"circle","n":2,"f":"striped","z":"s"},{"sh":"square","n":1,"f":"striped","z":"s"},{"sh":"diamond","n":3,"f":"striped","z":"s"},{"sh":"square","n":3,"f":"solid","z":"m"},{"sh":"diamond","n":2,"f":"solid","z":"m"},{"sh":"circle","n":1,"f":"solid","z":"m"},{"sh":"diamond","n":1,"f":"empty","z":"l"},{"sh":"circle","n":3,"f":"empty","z":"l"}],"opts":[{"sh":"square","n":3,"f":"empty","z":"l"},{"sh":"square","n":2,"f":"empty","z":"l"},{"sh":"square","n":2,"f":"striped","z":"l"},{"sh":"square","n":2,"f":"empty","z":"s"},{"sh":"diamond","n":2,"f":"empty","z":"l"},{"sh":"square","n":2,"f":"empty","z":"m"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"mat","cells":[{"sh":"triangle","n":3,"f":"striped","z":"s"},{"sh":"hexagon","n":2,"f":"striped","z":"m"},{"sh":"diamond","n":1,"f":"striped","z":"l"},{"sh":"diamond","n":2,"f":"solid","z":"s"},{"sh":"triangle","n":1,"f":"solid","z":"m"},{"sh":"hexagon","n":3,"f":"solid","z":"l"},{"sh":"hexagon","n":1,"f":"empty","z":"s"},{"sh":"diamond","n":3,"f":"empty","z":"m"}],"opts":[{"sh":"diamond","n":2,"f":"empty","z":"l"},{"sh":"triangle","n":2,"f":"solid","z":"l"},{"sh":"hexagon","n":2,"f":"empty","z":"l"},{"sh":"triangle","n":3,"f":"empty","z":"l"},{"sh":"triangle","n":2,"f":"striped","z":"l"},{"sh":"triangle","n":2,"f":"empty","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[1,0],[1,2],[1,3],[2,0],[2,1],[2,2]],"opts":[[[0,1],[1,1],[1,2],[2,2],[3,0],[3,1],[3,2]],[[0,0],[0,1],[0,2],[1,2],[2,1],[2,2],[3,1]],[[0,3],[1,0],[1,1],[1,3],[2,1],[2,2],[2,3]],[[0,0],[0,1],[0,2],[1,0],[1,2],[1,3],[2,0]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"square","n":3,"f":"solid","z":"s"},{"sh":"triangle","n":2,"f":"striped","z":"m"},{"sh":"circle","n":1,"f":"empty","z":"l"},{"sh":"circle","n":2,"f":"striped","z":"s"},{"sh":"square","n":1,"f":"empty","z":"m"},{"sh":"triangle","n":3,"f":"solid","z":"l"},{"sh":"triangle","n":1,"f":"empty","z":"s"},{"sh":"circle","n":3,"f":"solid","z":"m"}],"opts":[{"sh":"square","n":2,"f":"solid","z":"l"},{"sh":"square","n":2,"f":"striped","z":"m"},{"sh":"triangle","n":2,"f":"striped","z":"l"},{"sh":"square","n":2,"f":"striped","z":"l"},{"sh":"square","n":3,"f":"striped","z":"l"},{"sh":"square","n":2,"f":"empty","z":"l"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,0],[1,0],[1,1],[2,0],[2,1],[2,2],[3,1]],"opts":[[[0,2],[1,1],[1,2],[1,3],[2,0],[2,1],[2,2]],[[0,0],[0,1],[0,2],[1,1],[1,2],[1,3],[2,2]],[[0,2],[1,1],[1,2],[2,0],[2,1],[2,2],[3,1]],[[0,1],[1,0],[1,1],[1,2],[2,0],[2,1],[3,0]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"},{"t":"mat","cells":[{"sh":"circle","n":2,"f":"empty","z":"l"},{"sh":"hexagon","n":3,"f":"solid","z":"l"},{"sh":"square","n":1,"f":"striped","z":"l"},{"sh":"hexagon","n":1,"f":"solid","z":"m"},{"sh":"square","n":2,"f":"striped","z":"m"},{"sh":"circle","n":3,"f":"empty","z":"m"},{"sh":"square","n":3,"f":"striped","z":"s"},{"sh":"circle","n":1,"f":"empty","z":"s"}],"opts":[{"sh":"hexagon","n":2,"f":"solid","z":"s"},{"sh":"hexagon","n":2,"f":"striped","z":"s"},{"sh":"hexagon","n":2,"f":"empty","z":"s"},{"sh":"hexagon","n":3,"f":"solid","z":"s"},{"sh":"hexagon","n":2,"f":"solid","z":"l"},{"sh":"hexagon","n":1,"f":"solid","z":"s"}],"c":"mat","q":"أي الخيارات يكمل الخانة الفارغة في المصفوفة؟"},{"t":"rot","base":[[0,2],[1,0],[1,2],[1,3],[2,0],[2,1],[2,2],[3,1]],"opts":[[[0,1],[1,0],[1,1],[1,2],[2,0],[2,2],[2,3],[3,2]],[[0,1],[0,2],[1,2],[1,3],[2,0],[2,1],[2,2],[3,1]],[[0,1],[1,0],[1,1],[1,3],[2,1],[2,2],[2,3],[3,2]],[[0,2],[1,1],[1,2],[1,3],[2,0],[2,1],[2,3],[3,1]]],"c":"rot","q":"أي الخيارات هو الشكل الأصلي نفسه بعد تدويره (دون قلبه)؟"}]};
+const KBLOB="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";
+const KSALT="mkh-26-k9";
+const CODEHASH=1609734633;
+const SINGLE="spatial";
+
+/* ============ أدوات ============ */
+const normAr=s=>s.normalize("NFC").replace(/[\u064B-\u0652\u0640]/g,"").replace(/[أإآ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/\s+/g," ").trim().toLowerCase();
+const fnv=s=>{let h=0x811c9dc5;for(const ch of s){h^=ch.codePointAt(0);h=Math.imul(h,0x01000193)>>>0;}return h;};
+const AR="٠١٢٣٤٥٦٧٨٩";
+const ar = x => String(x).replace(/\d/g,d=>AR[d]).replace(/\./g,"٫");
+const LET=["أ","ب","ج","د","هـ","و"];
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = s => document.querySelector(s);
+let KEY=null;
+function getKey(){
+  if(KEY) return KEY;
+  const S=KSALT, b=atob(KBLOB), u=new Uint8Array(b.length);
+  for(let i=0;i<b.length;i++) u[i]=b.charCodeAt(i)^S.charCodeAt(i%S.length);
+  KEY=JSON.parse(new TextDecoder().decode(u)); return KEY;
+}
+const erf = x => {const s=Math.sign(x);x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return s*y;};
+const pctile = iq => Math.round(50*(1+erf((iq-100)/15/Math.SQRT2))*10)/10;
+
+/* ============ تعريف المقاييس ============ */
+const TESTS=[
+ {id:"logic",kind:"iq",fmt:"mc",code:"ذ١",name:"الذكاء المنطقي",dom:"التفكير المنطقي والاستدلال",
+  desc:"يقيس قدرتك على الاستنتاج السليم من المقدمات، وترتيب العلاقات، واكتشاف القواعد، وحل المشكلات المركبة.",
+  cats:{ded:{n:"الاستدلال القياسي",tip:"ارسم المقدمات في دوائر متداخلة (أشكال فِن) قبل الحكم، وميّز بين ما يلزم حتمًا وما قد يكون."},
+        ord:{n:"الترتيب والعلاقات",tip:"دوّن العلاقات على خط أو مخطط بسيط بدل الاحتفاظ بها كلها في الذهن."},
+        code:{n:"الرموز والقواعد",tip:"ابدأ بالعنصر المشترك بين الأمثلة، ثم اختبر القاعدة المقترحة على كل مثال قبل اعتمادها."},
+        prob:{n:"حل المشكلات",tip:"جزّئ المسألة، وجرّب الحالة الأسوأ، واختبر الفرضيات بالافتراض المضاد (ماذا لو كان العكس صحيحًا؟)."}},
+  use:"التحليل، والتدقيق، وإدارة المخاطر، وصياغة السياسات والإجراءات، والتخطيط.",
+  norm:{m:16,sd:5},max:30},
+ {id:"numeric",kind:"iq",fmt:"mc",code:"ذ٢",name:"الذكاء الرياضي العددي",dom:"التفكير الكمي والعددي",
+  desc:"يقيس سرعة إدراك الأنماط العددية، والحساب والنسب، وتحويل المسائل الكلامية إلى معادلات، والحدس الكمي.",
+  cats:{ser:{n:"المتسلسلات العددية",tip:"افحص بالترتيب: الفروق، ثم النسب، ثم الأنماط المتداخلة والمتناوبة."},
+        calc:{n:"الحساب والنسب",tip:"تدرّب على الحساب الذهني للنسب المئوية بتحويلها إلى كسور (٢٥٪ = ربع)."},
+        word:{n:"المسائل الكلامية",tip:"حوّل كل مسألة إلى رموز ومعادلة قبل البدء بالحساب."},
+        ins:{n:"الحدس الكمي",tip:"عندما يبدو الجواب بديهيًا وسريعًا، تحقّق منه بالتعويض في معطيات المسألة."}},
+  use:"التحليل المالي، والميزانيات، وقراءة المؤشرات، والنمذجة الكمية، واتخاذ القرار بالأرقام.",
+  norm:{m:15,sd:5.5},max:30},
+ {id:"verbal",kind:"iq",fmt:"mc",code:"ذ٣",name:"الذكاء اللغوي",dom:"الفهم اللغوي والتعبير",
+  desc:"يقيس ثروتك من المفردات العربية، وإدراك العلاقات بين الكلمات، والتصنيف اللفظي، وفهم النصوص والأمثال.",
+  cats:{voc:{n:"المفردات والدلالة",tip:"اقرأ يوميًا نصًا عربيًا رفيعًا، ودوّن ثلاث كلمات جديدة مع مرادفها وضدها."},
+        ana:{n:"التناظر اللفظي",tip:"سمِّ العلاقة في الزوج الأول بجملة (أداة/مستخدم، جزء/كل، ضد...) ثم طبّقها على الثاني."},
+        cls:{n:"التصنيف اللفظي",tip:"ابحث عن الصفة الجامعة لثلاث كلمات، فالمختلفة هي التي تخرج عنها."},
+        com:{n:"الاستيعاب والفهم",tip:"لخّص كل نص تقرؤه في جملة واحدة، وميّز الفكرة الرئيسة عن التفاصيل."}},
+  use:"الكتابة، والتأليف، والتدريب، والعرض والإقناع، وصياغة التقارير.",
+  norm:{m:17,sd:5},max:30},
+ {id:"spatial",kind:"iq",fmt:"fig",code:"ذ٤",name:"الذكاء البصري المكاني",dom:"الاستدلال البصري المجرد",
+  desc:"يقيس إدراك القواعد في الأشكال المجردة (المصفوفات) والتدوير الذهني للأشكال، وهو أقرب المقاييس إلى الذكاء العام غير اللفظي.",
+  cats:{mat:{n:"المصفوفات والاستدلال المجرد",tip:"افحص كل خاصية على حدة (الشكل، العدد، التعبئة، الحجم) صفًّا صفًّا ثم عمودًا عمودًا."},
+        rot:{n:"التدوير الذهني",tip:"اختر خلية مميزة في الشكل (طرفًا أو زاوية) وتتبّع موقعها بعد التدوير بدل تدوير الشكل كله."}},
+  use:"التصميم، وقراءة المخططات والخرائط، وفهم الأنظمة المعقدة، والتخطيط المكاني.",
+  norm:{m:15,sd:5.5},max:30},
+ {id:"eq",kind:"iq",fmt:"mc",w:true,code:"ذ٥",name:"الذكاء العاطفي",dom:"إدراك المشاعر وإدارتها",
+  desc:"مواقف واقعية تقيس الوعي بالذات، وإدارة الانفعالات، والدافعية الذاتية، والتعاطف، وفهم المشاعر (نموذج جولمان وماير-سالوفي).",
+  cats:{aware:{n:"الوعي بالذات",tip:"خصص دقيقتين يوميًا لتسمية شعورك بدقة وسببه: «أشعر بـ... لأن...»."},
+        reg:{n:"إدارة الانفعالات",tip:"اعتمد قاعدة (توقف – تنفس – اختر): لا ترد في ذروة الانفعال، ولا تُرسل رسالة وأنت غاضب."},
+        mot:{n:"الدافعية الذاتية",tip:"اربط أهدافك بقيمة تهمك، وقسّمها إلى مراحل قصيرة تحتفي بإنجاز كل منها."},
+        emp:{n:"التعاطف",tip:"في الحوار القادم، أصغِ حتى تستطيع أن تعيد كلام محدثك ومشاعره بكلماتك قبل أن تنصح."},
+        und:{n:"فهم المشاعر",tip:"وسّع مفرداتك الشعورية: ميّز بين الضيق والإحباط والاستياء والقلق، وتأمل كيف يتحول شعور إلى آخر."}},
+  use:"القيادة، والتدريب، والإرشاد، وإدارة الفرق، والتعامل مع العملاء وقت الأزمات.",
+  norm:{m:64,sd:10},max:90},
+ {id:"social",kind:"iq",fmt:"mc",w:true,code:"ذ٦",name:"الذكاء الاجتماعي",dom:"فهم الناس والتعامل معهم",
+  desc:"مواقف تقيس قراءة الإشارات الاجتماعية، وفهم الأعراف والسياق، وإدارة الخلاف، والتأثير والإقناع، وديناميكيات الجماعة.",
+  cats:{cue:{n:"قراءة الإشارات الاجتماعية",tip:"راقب في كل لقاء التوافق بين الكلام ونبرة الصوت ولغة الجسد، وتحقق من انطباعك بسؤال لطيف."},
+        norm:{n:"فهم السياق والأعراف",tip:"قبل أي موقف جديد، اسأل: من صاحب المقام هنا؟ وما المتوقع مني؟"},
+        conf:{n:"إدارة الخلاف",tip:"افصل الشخص عن المشكلة، وابحث عن المصلحة الكامنة خلف كل موقف."},
+        infl:{n:"التأثير والإقناع",tip:"قدّم فكرتك بلغة أولويات من تخاطبه، وادعمها بدليل ومثال صغير ناجح."},
+        grp:{n:"ديناميكيات الجماعة",tip:"راقب من يتكلم ومن يصمت في الاجتماعات، ووزّع فرص المشاركة بعدل."}},
+  use:"القيادة، والتفاوض، وخدمة العملاء، والتدريب، وبناء الشبكات المهنية.",
+  norm:{m:64,sd:10},max:90},
+ {id:"bigfive",kind:"pers",fmt:"likert",code:"ش١",name:"العوامل الخمسة الكبرى",dom:"",
+  desc:"النموذج الأوسع قبولًا في علم النفس الحديث: الانفتاح، ويقظة الضمير، والانبساط، والوداعة، والاستقرار الانفعالي.",
+  chips:["الانفتاح","الانضباط","الانبساط","الوداعة","الاستقرار"]},
+ {id:"types",kind:"pers",fmt:"bipolar",code:"ش٢",name:"الأنماط الستة عشر",dom:"",
+  desc:"مبني على نظرية الأنماط النفسية ليونغ: كيف تستمد طاقتك، وكيف تجمع المعلومات، وكيف تقرر، وكيف تنظم حياتك.",
+  chips:["E / I","S / N","T / F","J / P"]},
+ {id:"disc",kind:"pers",fmt:"disc",code:"ش٣",name:"أنماط السلوك DISC",dom:"",
+  desc:"يصف أسلوبك السلوكي في العمل والتواصل: الهيمنة، والتأثير، والثبات، والامتثال والدقة.",
+  chips:["D","I","S","C"]}
+];
+const T = id => TESTS.find(t=>t.id===id);
+const itemsOf = id => Array.isArray(DATA[id]) ? DATA[id] : DATA[id].items;
+
+const BANDS=[
+ {min:130,label:"مرتفع جدًا (عبقري)",c:"--b6",
+  t:d=>`يقع أداؤك في ${d} في الشريحة العليا جدًا من الناس. هذا مؤشر على قدرة استثنائية تستحق أن تُستثمر في مهام معقدة وتحديات نوعية، وفي تعليم الآخرين وتوجيههم.`},
+ {min:120,label:"ذكاء مرتفع",c:"--b5",
+  t:d=>`أداؤك في ${d} مرتفع بوضوح ويتجاوز معظم الناس. تستوعب المسائل الجديدة بسرعة، ويمكنك التعامل مع مستويات عالية من التعقيد.`},
+ {min:110,label:"جيد (أعلى من المتوسط)",c:"--b4",
+  t:d=>`أداؤك في ${d} أعلى من المتوسط. لديك أساس قوي، والتدريب المركّز على المحاور الأضعف أدناه كفيل برفعك إلى المستوى المرتفع.`},
+ {min:90,label:"متوسط",c:"--b3",
+  t:d=>`أداؤك في ${d} ضمن النطاق المتوسط الذي يقع فيه أغلب الناس. هذه قدرة كافية للحياة والعمل، وقابلة للنمو الملموس بالممارسة المنتظمة.`},
+ {min:80,label:"أقل من المتوسط",c:"--b2",
+  t:d=>`أداؤك في ${d} أقل من المتوسط بقليل. هذه نتيجة قابلة للتحسن بالتدريب المنهجي، وقد تتأثر بقلة الألفة بنوع الأسئلة أو بالتعب أثناء الإجابة.`},
+ {min:-1,label:"ضعيف ويحتاج إلى عناية",c:"--b1",
+  t:d=>`النتيجة في ${d} منخفضة وتحتاج إلى عناية. قد تتأثر بعوامل مؤقتة كالإرهاق أو القلق أو التسرع؛ يُستحسن إعادة الاختبار في ظرف مريح، ثم البدء بخطة تطوير تدريجية على المحاور أدناه.`}
+];
+const bandOf = iq => BANDS.find(b=>iq>=b.min);
+
+/* ============ الحفظ ============ */
+const SKEY="mukhtabar-dhat-v1";
+let store={ans:{},idx:{},done:{}};
+try{const s=JSON.parse(localStorage.getItem(SKEY)||"null"); if(s&&s.ans) store=s;}catch(e){}
+const save=()=>{try{localStorage.setItem(SKEY,JSON.stringify(store));}catch(e){}};
+const answers = id => (store.ans[id] ||= new Array(30).fill(null));
+
+/* ============ الرسومات ============ */
+function shapeSVG(sh,cx,cy,r,f){
+  const fill = f==="solid"?"currentColor":f==="striped"?"url(#stripes)":"none";
+  const st=`fill="${fill}" stroke="currentColor" stroke-width="2"`;
+  const poly=(n,rot)=>Array.from({length:n},(_,i)=>{const a=rot+i*2*Math.PI/n;return (cx+r*Math.cos(a)).toFixed(1)+","+(cy+r*Math.sin(a)).toFixed(1);}).join(" ");
+  switch(sh){
+    case "circle": return `<circle cx="${cx}" cy="${cy}" r="${r*0.92}" ${st}/>`;
+    case "square": {const s=r*1.6;return `<rect x="${cx-s/2}" y="${cy-s/2}" width="${s}" height="${s}" ${st}/>`;}
+    case "triangle": return `<polygon points="${poly(3,-Math.PI/2)}" transform="translate(0 ${r*0.15})" ${st}/>`;
+    case "diamond": return `<polygon points="${poly(4,-Math.PI/2)}" ${st}/>`;
+    case "hexagon": return `<polygon points="${poly(6,0)}" ${st}/>`;
+  }
+}
+const POS={1:[[0,0]],2:[[-.24,-.22],[.24,.22]],3:[[0,-.26],[-.26,.2],[.26,.2]]};
+const BASE={1:.34,2:.19,3:.165}, SZ={s:.6,m:.8,l:1};
+function cellSVG(s,x,y,C){
+  if(!s) return `<text x="${x+C/2}" y="${y+C/2+14}" text-anchor="middle" font-size="40" font-family="Reem Kufi,sans-serif" fill="currentColor" opacity=".55">؟</text>`;
+  const r=C*BASE[s.n]*SZ[s.z];
+  return POS[s.n].map(([dx,dy])=>shapeSVG(s.sh,x+C/2+dx*C,y+C/2+dy*C,r,s.f)).join("");
+}
+function matrixSVG(cells){
+  const C=84,G=6,W=3*C+4*G;
+  let o=`<svg viewBox="0 0 ${W} ${W}" width="${W}" role="img" aria-label="مصفوفة أشكال ٣×٣ بخانة فارغة">`;
+  for(let i=0;i<9;i++){const r=Math.floor(i/3),c=i%3;const x=W-G-(c+1)*C-c*G,y=G+r*(C+G);
+    o+=`<rect x="${x}" y="${y}" width="${C}" height="${C}" rx="8" fill="var(--surface)" stroke="var(--line)" ${i===8?'stroke-dasharray="5 4" stroke-width="2"':''}/>`+cellSVG(cells[i]||null,x,y,C);}
+  return o+"</svg>";
+}
+function oneCellSVG(s){const C=84;return `<svg viewBox="0 0 ${C} ${C}" role="img" aria-label="خيار">`+cellSVG(s,0,0,C)+"</svg>";}
+function polySVG(cells,big){
+  const U=big?26:20,P=6,n=4,W=n*U+2*P;
+  const h=Math.max(...cells.map(p=>p[0]))+1,w=Math.max(...cells.map(p=>p[1]))+1;
+  const ox=P+(n-w)*U/2, oy=P+(n-h)*U/2;
+  let o=`<svg viewBox="0 0 ${W} ${W}" ${big?`width="${W*1.6}"`:""} role="img" aria-label="شكل مكوّن من مربعات">`;
+  for(const [r,c] of cells) o+=`<rect x="${(ox+c*U).toFixed(1)}" y="${(oy+r*U).toFixed(1)}" width="${U}" height="${U}" fill="var(--accent)" stroke="var(--surface)" stroke-width="2" rx="2"/>`;
+  return o+"</svg>";
+}
+
+/* ============ العرض ============ */
+const view={name:"home",id:null};
+function go(name,id){view.name=name;view.id=id||null;render();window.scrollTo({top:0});}
+
+const LOGO=`<svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="10" fill="var(--accent)"/><path d="M8 27c4-9 8-9 12 0s8 9 12 0" fill="none" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="13" r="3.2" fill="var(--accent-ink)"/></svg>`;
+function header(){
+  if(SINGLE){const t=T(SINGLE);return `<header class="top"><div class="brand">${LOGO}<div><h1>مختبر الذات</h1><p>${t.code} · ${t.kind==="iq"?"مقياس ذكاء":"مقياس شخصية"}</p></div></div>${view.name!=="home"?`<button class="linkbtn" data-go="home">صفحة المقياس</button>`:""}</header>`;}
+  return `<header class="top"><div class="brand">${LOGO}<div><h1>مختبر الذات</h1><p>تسعة مقاييس للذكاء والشخصية</p></div></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">${view.name!=="home"?`<button class="linkbtn" data-go="home">كل المقاييس</button>`:""}<button class="linkbtn" data-go="profile">ملفي الشامل</button></div></header>`;
+}
+function statusOf(id){
+  if(store.done[id]){
+    const t=T(id);
+    if(t.kind==="iq") return `<span class="status done num">مكتمل · ${ar(scoreIQ(id).iq)}</span>`;
+    if(id==="types") return `<span class="status done">مكتمل · <span dir="ltr">${scoreTypes().code}</span></span>`;
+    if(id==="disc"){const d=scoreDISC();return `<span class="status done">مكتمل · ${d.order[0]}/${d.order[1]}</span>`;}
+    return `<span class="status done">مكتمل</span>`;
+  }
+  const n=(store.ans[id]||[]).filter(v=>v!==null).length;
+  if(n) return `<span class="status prog num">قيد الإجابة · ${ar(n)} من ${ar(30)}</span>`;
+  return `<span class="status muted">لم يبدأ</span>`;
+}
+function card(t){
+  const chips=t.cats?Object.values(t.cats).map(c=>c.n):t.chips;
+  return `<button class="card" data-open="${t.id}"><span class="code">${t.code}</span><h3>${t.name}</h3><p>${t.desc}</p>
+  <div class="chips">${chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+  <div class="foot">${statusOf(t.id)}<span class="go">${store.done[t.id]?"عرض النتيجة":"ابدأ"} ←</span></div></button>`;
+}
+const MINS={logic:"٢٠–٣٠",numeric:"٢٠–٣٠",verbal:"١٥–٢٥",spatial:"٢٠–٣٠",eq:"١٥–٢٠",social:"١٥–٢٠",bigfive:"٨–١٠",types:"٨–١٠",disc:"١٠–١٢"};
+function landing(t){
+  const chips=t.cats?Object.values(t.cats).map(c=>c.n):t.chips;
+  const done=store.done[t.id], n=(store.ans[t.id]||[]).filter(v=>v!==null).length;
+  const bands=BANDS.map((b,i)=>{const rng=["١٣٠ فأعلى","١٢٠–١٢٩","١١٠–١١٩","٩٠–١٠٩","٨٠–٨٩","٧٩ فأقل"][i];return `<li><span class="sw" style="background:var(${b.c})"></span><span class="num">${rng}</span><span>${b.label}</span></li>`;}).join("");
+  const steps = t.kind==="iq"
+    ? ["اختر إجابة واحدة لكل سؤال، ويمكنك الرجوع وتعديل أي إجابة قبل الإنهاء.","لا تظهر الإجابة الصحيحة أثناء الاختبار.","لا يوجد وقت محدد، لكن أجب بتركيز ودون استعانة بأحد أو بأي مصدر.","تظهر درجتك وتحليلها فور الإنهاء."]
+    : ["لا توجد إجابة صحيحة أو خاطئة.","أجب بما يصف سلوكك الفعلي عادة، لا بما تتمنى أن تكون عليه.","لا تُطِل التفكير؛ الانطباع الأول غالبًا هو الأصدق.","يظهر تحليل شخصيتك فور الإنهاء."];
+  return header()+`
+  <section class="intro"><div>
+    <p class="eyebrow">${t.code} · ${t.kind==="iq"?"مقياس ذكاء":"مقياس شخصية"} · للتطوير الذاتي والوعي بالذات</p>
+    <h2>${t.name}</h2>
+    <p>${t.desc}</p>
+    <div class="chips" style="margin:12px 0 16px">${chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+    <p class="muted num" style="font-size:14px">${ar(30)} سؤالًا · بلا وقت محدد · يستغرق عادة ${MINS[t.id]} دقيقة</p>
+    <ul class="clean" style="margin:12px 0 18px">${steps.map(x=>`<li>${x}</li>`).join("")}</ul>
+    <div class="actions"><button class="btn primary" data-open="${t.id}">${done?"عرض نتيجتي":n?"متابعة الإجابة ("+ar(n)+" من "+ar(30)+")":"ابدأ المقياس"} ←</button></div>
+  </div>
+  ${t.kind==="iq"?`<div class="scale"><h3>سلّم تفسير الدرجات</h3><ul>${bands}</ul></div>`:`<div class="scale"><h3>ما الذي ستحصل عليه</h3><ul class="clean" style="display:block">${t.id==="bigfive"?"<li>درجتك في العوامل الخمسة</li><li>تحليل مفصل لكل عامل</li><li>توصيات للتطوير</li>":t.id==="types"?"<li>نمطك من الأنماط الستة عشر</li><li>وضوح كل تفضيل من تفضيلاتك الأربعة</li><li>نقاط القوة وبيئة العمل المناسبة</li>":"<li>نمطك الغالب والمساند</li><li>توزيع أنماطك الأربعة</li><li>أسلوب التواصل معك وتوصيات النمو</li>"}</ul></div>`}
+  </section>
+  <p class="note">تُحفظ إجاباتك على هذا الجهاز، فيمكنك التوقف والعودة لاحقًا. ${t.kind==="iq"?"الدرجة تقديرية لأغراض الوعي الذاتي والتطوير، وليست تشخيصًا سريريًا؛ فالمقاييس الرسمية تُقنَّن على عينات كبيرة وتُطبَّق بإشراف مختص.":"هذا المقياس أداة للوعي الذاتي والتطوير، وليس تشخيصًا نفسيًا."}</p>`;
+}
+function home(){
+  if(SINGLE) return landing(T(SINGLE));
+  const bands=BANDS.map((b,i)=>{const rng=["١٣٠ فأعلى","١٢٠–١٢٩","١١٠–١١٩","٩٠–١٠٩","٨٠–٨٩","٧٩ فأقل"][i];return `<li><span class="sw" style="background:var(${b.c})"></span><span class="num">${rng}</span><span>${b.label}</span></li>`;}).join("");
+  return header()+`
+  <section class="intro"><div>
+    <p class="eyebrow">للتطوير الذاتي والوعي بالذات</p>
+    <h2>اعرف قدراتك، وافهم شخصيتك</h2>
+    <p>ستة مقاييس للذكاء بأنواعه، وثلاثة مقاييس للشخصية. كل مقياس ثلاثون سؤالًا بلا وقت محدد. أجب بتأنٍّ وصدق، ولن تظهر الإجابات الصحيحة أثناء الاختبار؛ يُصحَّح المقياس آليًا وتظهر النتيجة وتحليلها بعد الانتهاء.</p>
+    <p class="muted" style="font-size:14px">تُحفظ إجاباتك على هذا الجهاز، فيمكنك التوقف والعودة لاحقًا.</p>
+  </div>
+  <div class="scale"><h3>سلّم تفسير درجات الذكاء</h3><ul>${bands}</ul></div></section>
+  <div class="section-h"><h2>مقاييس الذكاء</h2><span class="muted">درجة تقديرية على المقياس العالمي (المتوسط ١٠٠)</span></div>
+  <div class="grid">${TESTS.filter(t=>t.kind==="iq").map(card).join("")}</div>
+  <div class="section-h"><h2>مقاييس الشخصية</h2><span class="muted">لا توجد إجابة صحيحة أو خاطئة</span></div>
+  <div class="grid">${TESTS.filter(t=>t.kind==="pers").map(card).join("")}</div>
+  <p class="note">هذه المقاييس أدوات للوعي الذاتي والتطوير، مبنية على نماذج علمية معتمدة. درجات الذكاء فيها تقديرية وليست تشخيصًا سريريًا؛ فالمقاييس الرسمية (مثل وكسلر وستانفورد-بينيه) تُقنَّن على عينات كبيرة وتُطبَّق بإشراف مختص.</p>`;
+}
+
+/* ---- شاشة السؤال ---- */
+const remainTxt=n=>n===1?"بقي سؤال واحد":n===2?"بقي سؤالان":n<=10?`بقيت ${ar(n)} أسئلة`:`بقي ${ar(n)} سؤالًا`;
+function qView(){
+  const t=T(view.id), items=itemsOf(t.id), A=answers(t.id);
+  let i=store.idx[t.id]||0; if(i>29)i=29;
+  const it=items[i], sel=A[i];
+  const answered=A.filter(v=>v!==null).length;
+  let body="";
+  if(t.fmt==="mc"){
+    body=`<p class="qtext">${esc(it.q)}</p><div class="opts" role="radiogroup">${it.o.map((o,j)=>`<button class="opt ${sel===j?"sel":""}" role="radio" aria-checked="${sel===j}" data-ans="${j}"><span class="let">${LET[j]}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+  } else if(t.fmt==="fig"){
+    if(it.t==="mat"){
+      body=`<p class="qtext">${it.q}</p><div class="fig">${matrixSVG(it.cells)}</div><div class="tiles">${it.opts.map((o,j)=>`<button class="tile ${sel===j?"sel":""}" data-ans="${j}" aria-label="الخيار ${LET[j]}">${oneCellSVG(o)}<span class="let">${LET[j]}</span></button>`).join("")}</div>`;
+    } else {
+      body=`<p class="qtext">${it.q}</p><div class="fig">${polySVG(it.base,true)}</div><div class="tiles four">${it.opts.map((o,j)=>`<button class="tile ${sel===j?"sel":""}" data-ans="${j}" aria-label="الخيار ${LET[j]}">${polySVG(o)}<span class="let">${LET[j]}</span></button>`).join("")}</div>`;
+    }
+  } else if(t.fmt==="likert"){
+    const L=["لا أوافق بشدة","لا أوافق","محايد","أوافق","أوافق بشدة"];
+    body=`<p class="qtext">${esc(it.q)}</p><div class="likert" role="radiogroup">${L.map((l,j)=>`<button class="opt ${sel===j?"sel":""}" role="radio" aria-checked="${sel===j}" data-ans="${j}"><span class="dot"></span><span>${l}</span></button>`).join("")}</div>`;
+  } else if(t.fmt==="bipolar"){
+    const L=["(أ) تمامًا","(أ) غالبًا","بين الاثنين","(ب) غالبًا","(ب) تمامًا"];
+    body=`<p class="qtext">أيّ العبارتين تصفك أكثر؟</p><div class="bipolar"><div class="pole"><b>(أ)</b>${esc(it.A)}</div><div class="pole"><b>(ب)</b>${esc(it.B)}</div></div>
+    <div class="likert" role="radiogroup">${L.map((l,j)=>`<button class="opt ${sel===j?"sel":""}" role="radio" aria-checked="${sel===j}" data-ans="${j}"><span class="dot"></span><span>${l}</span></button>`).join("")}</div>`;
+  } else if(t.fmt==="disc"){
+    body=`<p class="qtext">${esc(it.q)}</p><p class="hint" style="margin-top:-12px;margin-bottom:14px">اختر العبارة الأقرب إلى سلوكك الفعلي، لا إلى ما ترغب أن تكون عليه.</p><div class="opts" role="radiogroup">${it.o.map((o,j)=>`<button class="opt ${sel===j?"sel":""}" role="radio" aria-checked="${sel===j}" data-ans="${j}"><span class="let">${LET[j]}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+  }
+  const map=A.map((v,j)=>`<button class="${v!==null?"ans":""} ${j===i?"cur":""} num" data-jump="${j}" aria-label="السؤال ${ar(j+1)}">${ar(j+1)}</button>`).join("");
+  const all=answered===30;
+  return header()+`
+  <div class="testbar"><div><span class="eyebrow">${t.code} · ${t.kind==="iq"?"مقياس ذكاء":"مقياس شخصية"}</span><h2>${t.name}</h2></div><span class="muted num">أُجيب ${ar(answered)} من ${ar(30)}</span></div>
+  <div class="progress" aria-hidden="true"><i style="width:${answered/30*100}%"></i></div>
+  <div class="qcard"><div class="qnum num">السؤال ${ar(i+1)} من ${ar(30)}</div>${body}
+    <div class="nav"><button class="btn" data-step="-1" ${i===0?"disabled":""}>→ السابق</button>
+    ${all?`<button class="btn primary" data-finish="1">إنهاء وعرض النتيجة</button>`:`<span class="muted" style="font-size:14px">${remainTxt(30-answered)}</span>`}
+    <button class="btn ${!all&&i<29?"primary":""}" data-step="1" ${i===29?"disabled":""}>التالي ←</button></div>
+  </div>
+  <div class="map" aria-label="خريطة الأسئلة">${map}</div>
+  <p class="hint">اضغط على رقم أي سؤال للانتقال إليه. ${t.kind==="iq"?"لا تظهر الإجابة الصحيحة أثناء الاختبار.":""}</p>`;
+}
+
+/* ============ التصحيح ============ */
+function scoreIQ(id){
+  const t=T(id), K=getKey()[id], items=itemsOf(id), A=answers(id);
+  let raw=0; const cat={};
+  items.forEach((it,i)=>{
+    const c=cat[it.c] ||= {got:0,max:0};
+    const pts = t.w ? (A[i]===null?0:K[i].w[A[i]]) : (A[i]===K[i].a?1:0);
+    raw+=pts; c.got+=pts; c.max+= t.w?3:1;
+  });
+  const iq=Math.max(55,Math.min(145,Math.round(100+15*(raw-t.norm.m)/t.norm.sd)));
+  return {raw,iq,cat,pct:pctile(iq)};
+}
+function scoreBig5(){
+  const A=answers("bigfive"), s={O:0,C:0,E:0,A:0,N:0};
+  DATA.bigfive.items.forEach((it,i)=>{const v=(A[i]??2)+1; let x=it.k===1?v:6-v; if(it.t==="N") x=6-x; s[it.t]+=x;});
+  const out={}; for(const k in s){const p=Math.round((s[k]-6)/24*100); out[k]={raw:s[k],p,lv:p>65?"hi":p<35?"lo":"mid"};} return out;
+}
+function scoreTypes(){
+  const A=answers("types"), tot={EI:0,SN:0,TF:0,JP:0}, n={EI:0,SN:0,TF:0,JP:0};
+  DATA.types.items.forEach((it,i)=>{const v=2-(A[i]??2); const first=it.d[0]; tot[it.d]+= it.p===first? v : -v; n[it.d]++;});
+  let code=""; const dims={};
+  for(const d of ["EI","SN","TF","JP"]){const L=tot[d]>0?d[0]:d[1]; code+=L; dims[d]={L,firstPct:Math.round(50+tot[d]/(2*n[d])*50)};}
+  return {code,dims};
+}
+function scoreDISC(){
+  const A=answers("disc"), c={D:0,I:0,S:0,C:0};
+  DATA.disc.items.forEach((it,i)=>{if(A[i]!==null)c[it.s[A[i]]]++;});
+  const order=Object.keys(c).sort((a,b)=>c[b]-c[a]||"DISC".indexOf(a)-"DISC".indexOf(b));
+  return {c,order};
+}
+
+/* ============ النتائج ============ */
+function bellSVG(iq,color){
+  const W=640,H=190,x0=30,x1=W-30,base=150,top=22;
+  const X=v=>x0+(v-55)/(145-55)*(x1-x0);
+  const pdf=v=>Math.exp(-((v-100)**2)/(2*225));
+  const pts=[];for(let v=55;v<=145;v+=1)pts.push([X(v),base-(base-top)*pdf(v)]);
+  const seg=(a,b,c)=>{const p=pts.filter(q=>q[0]>=X(a)-.01&&q[0]<=X(b)+.01);return `<path d="M${X(a)},${base} L${p.map(q=>q.join(",")).join(" L")} L${X(b)},${base} Z" fill="var(${c})" opacity=".22"/>`;};
+  const regions=[[55,80,"--b1"],[80,90,"--b2"],[90,110,"--b3"],[110,120,"--b4"],[120,130,"--b5"],[130,145,"--b6"]];
+  let o=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="موقع الدرجة ${iq} على منحنى التوزيع الطبيعي">`;
+  o+=regions.map(r=>seg(...r)).join("");
+  o+=`<path d="M${pts.map(q=>q.join(",")).join(" L")}" fill="none" stroke="var(--muted)" stroke-width="1.5"/>`;
+  o+=`<line x1="${x0}" y1="${base}" x2="${x1}" y2="${base}" stroke="var(--line)" stroke-width="1.5"/>`;
+  for(const v of [70,80,90,100,110,120,130,140]) o+=`<line x1="${X(v)}" y1="${base}" x2="${X(v)}" y2="${base+5}" stroke="var(--muted)"/><text x="${X(v)}" y="${base+22}" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans Arabic,sans-serif">${ar(v)}</text>`;
+  const labels=[[67,"ضعيف"],[85,"أقل"],[100,"متوسط"],[115,"جيد"],[125,"مرتفع"],[137.5,"عبقري"]];
+  for(const [v,l] of labels) o+=`<text x="${X(v)}" y="${base-6}" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="IBM Plex Sans Arabic,sans-serif">${l}</text>`;
+  const xm=X(iq), ym=base-(base-top)*pdf(iq);
+  o+=`<line x1="${xm}" y1="${top-8}" x2="${xm}" y2="${base}" stroke="var(${color})" stroke-width="2.5"/><circle cx="${xm}" cy="${ym}" r="6" fill="var(${color})" stroke="var(--surface)" stroke-width="2"/>`;
+  o+=`<text x="${Math.min(Math.max(xm,50),W-50)}" y="${top-12}" text-anchor="middle" font-size="14" font-weight="700" fill="var(${color})" font-family="Reem Kufi,sans-serif">${ar(iq)}</text>`;
+  return o+"</svg>";
+}
+function catBars(t,cat){
+  return `<div class="bars">${Object.entries(t.cats).map(([k,c])=>{const s=cat[k];if(!s)return"";const p=Math.round(s.got/s.max*100);
+    return `<div class="bar-row"><span>${c.n}</span><div class="bar"><i style="width:${p}%;background:${p>=75?"var(--b5)":p>=50?"var(--b4)":p>=35?"var(--b2)":"var(--b1)"}"></i></div><span class="v num">${ar(p)}٪</span></div>`;}).join("")}</div>`;
+}
+function iqResult(){
+  const t=T(view.id), r=scoreIQ(t.id), b=bandOf(r.iq);
+  const cats=Object.entries(r.cat).map(([k,s])=>({k,p:s.got/s.max,n:t.cats[k].n,tip:t.cats[k].tip})).sort((a,b)=>b.p-a.p);
+  const strong=cats[0], weak=cats[cats.length-1];
+  const devs=cats.filter(c=>c.p<0.75); const plan=(devs.length?devs:cats.slice(-1)).slice(-3).reverse();
+  const above=r.pct;
+  const rawTxt=t.w?`الدرجة الخام ${ar(r.raw)} من ${ar(90)}`:`الإجابات الصحيحة ${ar(r.raw)} من ${ar(30)}`;
+  return header()+`
+  <div class="testbar"><div><span class="eyebrow">${t.code} · نتيجة المقياس</span><h2>${t.name}</h2></div></div>
+  <section class="res-hero" style="--bandc:var(${b.c})">
+    <div class="score"><div class="big num">${ar(r.iq)}</div><div class="lbl">${t.id==="eq"?"مؤشر الذكاء العاطفي":t.id==="social"?"مؤشر الذكاء الاجتماعي":"درجة الذكاء التقديرية"}</div></div>
+    <div><span class="band">${b.label}</span>
+      <p>درجتك أعلى من نحو <b class="num">${ar(Math.round(above))}٪</b> من الناس تقديريًا.</p>
+      <p class="muted num">${rawTxt} · المتوسط العالمي ١٠٠ والانحراف المعياري ١٥</p></div>
+  </section>
+  <div class="curve">${bellSVG(r.iq,b.c)}</div>
+  <div class="cols">
+    <section class="panel"><h3>الأداء حسب المحاور</h3>${catBars(t,r.cat)}</section>
+    <section class="panel"><h3>التحليل</h3><p>${b.t(t.dom)}</p>
+      <p><b>أقوى محاورك:</b> ${strong.n} (${ar(Math.round(strong.p*100))}٪).${cats.length>1&&weak.p<strong.p?` <b>والأحوج إلى تطوير:</b> ${weak.n} (${ar(Math.round(weak.p*100))}٪).`:""}</p>
+      <p><b>مجالات توظيف هذه القدرة:</b> ${t.use}</p></section>
+  </div>
+  <section class="panel"><h3>خطة التطوير المقترحة</h3><ul class="clean">${plan.map(c=>`<li><b>${c.n}:</b> ${c.tip}</li>`).join("")}
+    <li>أعد المقياس بعد شهرين من التدريب المنتظم لقياس التقدم، وقارن المحاور لا الدرجة الكلية فقط.</li></ul></section>
+  ${reviewBlock(t)}
+  ${resultActions(t)}`;
+}
+function reviewBlock(t){
+  if(!review.open) return `<section class="panel"><h3>مراجعة الإجابات (للمدرب)</h3><p class="muted">مفتاح الإجابات والتفسيرات محمي حتى لا تنكشف الأسئلة لمن سيخضع للمقياس لاحقًا. أدخل رمز المدرب لعرضها.</p>
+    <form class="lock" id="lockf"><label for="code" class="muted" style="font-size:14px">رمز المدرب</label><input id="code" autocomplete="off" placeholder="أدخل الرمز" dir="ltr"><button class="btn" type="submit">عرض المراجعة</button>${review.err?`<span class="err">الرمز غير صحيح. تحقق منه وأعد المحاولة.</span>`:""}</form></section>`;
+  const K=getKey()[t.id], items=itemsOf(t.id), A=answers(t.id);
+  const rows=items.map((it,i)=>{
+    const u=A[i]; let ok,mark,ansTxt,best;
+    if(t.w){const w=K[i].w; ok=w[u]===3; best=w.indexOf(3); mark=`<span class="${w[u]>=2?"ok":"no"} num">${ar(w[u]??0)} / ${ar(3)}</span>`;
+      ansTxt=`<p>إجابتك: ${esc(it.o[u])}</p>${ok?"":`<p>الإجابة الأفضل: <b>${esc(it.o[best])}</b></p>`}`;}
+    else {ok=u===K[i].a; mark=`<span class="${ok?"ok":"no"}">${ok?"صحيحة":"خاطئة"}</span>`;
+      if(t.fmt==="fig"){const f=it.t==="mat"?oneCellSVG:polySVG; ansTxt=`<div class="figs">${it.t==="mat"?matrixSVG(it.cells):polySVG(it.base)}<span>إجابتك (${LET[u]}):</span>${f(it.opts[u])}${ok?"":`<span>الصحيحة (${LET[K[i].a]}):</span>${f(it.opts[K[i].a])}`}</div>`;}
+      else ansTxt=`<p>إجابتك: ${esc(it.o[u])}</p>${ok?"":`<p>الإجابة الصحيحة: <b>${esc(it.o[K[i].a])}</b></p>`}`;}
+    return `<div class="rv"><div class="h"><span class="eyebrow num">السؤال ${ar(i+1)} · ${t.cats[it.c].n}</span>${mark}</div><p class="q">${esc(it.q)}</p>${ansTxt}<p class="e">${esc(K[i].e)}</p></div>`;
+  }).join("");
+  return `<section class="panel"><h3>مراجعة الإجابات والتفسيرات</h3><div class="review">${rows}</div></section>`;
+}
+const review={open:false,err:false};
+function resultActions(t){
+  return `<div class="actions">${SINGLE?`<button class="btn" data-go="home">→ صفحة المقياس</button>`:`<button class="btn" data-go="home">→ العودة إلى المقاييس</button><button class="btn" data-go="profile">ملفي الشامل</button>`}
+  <button class="btn warn" data-reset="${t.id}">${resetArm===t.id?"تأكيد: حذف الإجابات وإعادة البدء":"إعادة المقياس"}</button></div>`;
+}
+let resetArm=null;
+
+function lvlChip(lv){return `<span class="lvl ${lv}">${lv==="hi"?"مرتفع":lv==="lo"?"منخفض":"متوسط"}</span>`;}
+function big5Result(){
+  const t=T("bigfive"), s=scoreBig5(), TR=DATA.bigfive.traits, order=["O","C","E","A","N"];
+  const top=order.slice().sort((a,b)=>s[b].p-s[a].p);
+  return header()+`
+  <div class="testbar"><div><span class="eyebrow">${t.code} · نتيجة المقياس</span><h2>${t.name}</h2></div></div>
+  <section class="panel"><h3>ملفك على العوامل الخمسة</h3><div class="bars">${order.map(k=>`<div class="bar-row"><span>${TR[k].name}</span><div class="bar"><i style="width:${Math.max(3,s[k].p)}%;background:${s[k].lv==="hi"?"var(--b5)":s[k].lv==="lo"?"var(--amber)":"var(--b3)"}"></i></div><span class="v num">${ar(s[k].p)}٪</span></div>`).join("")}</div>
+  <p class="muted" style="margin-top:14px;font-size:14px">النسبة موقعك بين أدنى درجة ممكنة وأعلاها في كل عامل: أقل من ٣٥٪ منخفض، ومن ٣٥ إلى ٦٥٪ متوسط، وأكثر من ٦٥٪ مرتفع. لا توجد درجة «أفضل» مطلقًا؛ لكل طرف نقاط قوة وتحديات.</p></section>
+  <section class="panel"><h3>الخلاصة</h3><p>أبرز ما يميزك: <b>${TR[top[0]].name}</b> ثم <b>${TR[top[1]].name}</b>. ${TR[top[0]][s[top[0]].lv]}</p></section>
+  <section class="panel"><h3>التحليل التفصيلي</h3>${order.map(k=>`<div class="trait"><h4><span>${TR[k].name}</span>${lvlChip(s[k].lv)}</h4><p class="muted" style="font-size:14px">${TR[k].what}</p><p>${TR[k][s[k].lv]}</p><p><b>للتطوير:</b> ${s[k].lv==="lo"?TR[k].tipLo:TR[k].tipHi}</p></div>`).join("")}</section>
+  ${resultActions(t)}`;
+}
+function typesResult(){
+  const t=T("types"), r=scoreTypes(), D=DATA.types.dims, ty=DATA.types.types[r.code];
+  const dual=d=>{const x=r.dims[d], p=x.firstPct, a=d[0], b=d[1];
+    const left=p>=50?50:p, width=Math.abs(p-50);
+    return `<div class="dual"><span class="l ${x.L===a?"on":""}">${D[d][a]}</span><div class="track"><span class="fill" style="${p>=50?`left:50%;width:${width}%`:`right:50%;width:${width}%`}"></span></div><span class="r ${x.L===b?"on":""}">${D[d][b]}</span></div>
+    <p class="muted" style="font-size:14px;margin:-4px 0 14px">${D[d][x.L+"d"]} · وضوح التفضيل ${ar(Math.max(p,100-p))}٪</p>`;};
+  return header()+`
+  <div class="testbar"><div><span class="eyebrow">${t.code} · نتيجة المقياس</span><h2>${t.name}</h2></div></div>
+  <section class="res-hero"><div class="score"><div class="typecode">${r.code}</div><div class="lbl">نمطك</div></div>
+    <div><span class="band" style="--bandc:var(--accent)">${ty.n}</span><p>${ty.s}</p></div></section>
+  <section class="panel"><h3>تفضيلاتك الأربعة</h3>${["EI","SN","TF","JP"].map(dual).join("")}
+  <p class="muted" style="font-size:13.5px">وضوح التفضيل القريب من ٥٠٪ يعني أنك تستخدم الطرفين بمرونة، وقد يتغير الحرف في إعادة الاختبار.</p></section>
+  <div class="cols"><section class="panel"><h3>نقاط القوة</h3><ul class="clean">${ty.st.map(x=>`<li>${x}</li>`).join("")}</ul></section>
+  <section class="panel"><h3>مناطق الانتباه</h3><ul class="clean">${ty.bl.map(x=>`<li>${x}</li>`).join("")}</ul></section></div>
+  <section class="panel"><h3>بيئة العمل المناسبة</h3><p>${ty.wk}</p><h3 style="margin-top:14px">توصية للنمو</h3><p>${ty.dev}</p></section>
+  ${resultActions(t)}`;
+}
+function discResult(){
+  const t=T("disc"), r=scoreDISC(), S=DATA.disc.styles, p=r.order[0], q=r.order[1];
+  const blend=DATA.disc.blends[p+q];
+  return header()+`
+  <div class="testbar"><div><span class="eyebrow">${t.code} · نتيجة المقياس</span><h2>${t.name}</h2></div></div>
+  <section class="res-hero"><div class="score"><div class="typecode">${p}${q}</div><div class="lbl">النمط الغالب والمساند</div></div>
+    <div><span class="band" style="--bandc:var(--accent)">${blend}</span><p>نمطك الغالب <b>${S[p].n}</b> (${S[p].tag})، يسانده <b>${S[q].n}</b>. ${S[p].s}</p></div></section>
+  <section class="panel"><h3>توزيع أنماطك</h3><div class="bars">${"DISC".split("").map(k=>`<div class="bar-row"><span>${S[k].n}</span><div class="bar"><i style="width:${Math.max(3,r.c[k]/30*100)}%;background:${k===p?"var(--b5)":k===q?"var(--b4)":"var(--b3)"}"></i></div><span class="v num">${ar(Math.round(r.c[k]/30*100))}٪</span></div>`).join("")}</div></section>
+  <div class="cols">${[p,q].map((k,ix)=>`<section class="panel"><h3>${ix?"النمط المساند":"النمط الغالب"}: ${S[k].n}</h3><p>${S[k].s}</p>
+    <p><b>نقاط القوة:</b> ${S[k].st.join("، ")}.</p><p><b>تحديات محتملة:</b> ${S[k].ch.join("، ")}.</p></section>`).join("")}</div>
+  <section class="panel"><h3>التواصل والتطوير</h3><p><b>كيف يتواصل الآخرون معك بفاعلية:</b> ${S[p].com}</p><p><b>توصية للنمو:</b> ${S[p].dev} ${S[q].dev}</p>
+  ${r.c[r.order[3]]<=3?`<p><b>النمط الأقل استخدامًا:</b> ${S[r.order[3]].n}. قد تحتاج إلى استعارة سلوكياته عمدًا في بعض المواقف: ${S[r.order[3]].st[0]}.</p>`:""}</section>
+  ${resultActions(t)}`;
+}
+function profile(){
+  const iqs=TESTS.filter(t=>t.kind==="iq"&&store.done[t.id]).map(t=>({t,r:scoreIQ(t.id)}));
+  const cog=iqs.filter(x=>["logic","numeric","verbal","spatial"].includes(x.t.id));
+  const avg=a=>Math.round(a.reduce((s,x)=>s+x.r.iq,0)/a.length);
+  let rows=iqs.map(({t,r})=>{const b=bandOf(r.iq);return `<tr><td>${t.name}</td><td class="num"><b>${ar(r.iq)}</b></td><td style="color:var(${b.c});font-weight:600">${b.label}</td><td class="num">${ar(Math.round(r.pct))}٪</td></tr>`;}).join("");
+  const pers=[];
+  if(store.done.types){const r=scoreTypes();pers.push(`<li><b>الأنماط الستة عشر:</b> <span dir="ltr">${r.code}</span> — ${DATA.types.types[r.code].n}</li>`);}
+  if(store.done.disc){const r=scoreDISC();pers.push(`<li><b>DISC:</b> ${r.order[0]}/${r.order[1]} — ${DATA.disc.blends[r.order[0]+r.order[1]]}</li>`);}
+  if(store.done.bigfive){const s=scoreBig5(),TR=DATA.bigfive.traits;pers.push(`<li><b>العوامل الخمسة:</b> ${["O","C","E","A","N"].map(k=>`${TR[k].short} ${ar(s[k].p)}٪`).join(" · ")}</li>`);}
+  const comp=cog.length?(()=>{const v=avg(cog),b=bandOf(v);return `<section class="res-hero" style="--bandc:var(${b.c})"><div class="score"><div class="big num">${ar(v)}</div><div class="lbl">المؤشر المعرفي العام</div></div><div><span class="band">${b.label}</span><p>متوسط ${ar(cog.length)} من مقاييس القدرات المعرفية الأربعة (المنطقي، العددي، اللغوي، البصري).${cog.length<4?" أكمل البقية للحصول على مؤشر أدق.":""}</p></div></section>`;})():"";
+  return header()+`
+  <div class="testbar"><div><span class="eyebrow">خلاصة كل ما أكملته</span><h2>ملفي الشامل</h2></div></div>
+  ${comp}
+  <section class="panel"><h3>مقاييس الذكاء</h3>${rows?`<div class="tablewrap"><table class="prof-table"><thead><tr><th>المقياس</th><th>الدرجة</th><th>التصنيف</th><th>أعلى من</th></tr></thead><tbody>${rows}</tbody></table></div>`:`<div class="empty">لم تُكمل أي مقياس للذكاء بعد.</div>`}</section>
+  <section class="panel"><h3>مقاييس الشخصية</h3>${pers.length?`<ul class="clean">${pers.join("")}</ul>`:`<div class="empty">لم تُكمل أي مقياس للشخصية بعد.</div>`}</section>
+  <div class="actions"><button class="btn" data-go="home">→ العودة إلى المقاييس</button></div>`;
+}
+
+function render(){
+  const app=$("#app");
+  if(view.name==="home") app.innerHTML=home();
+  else if(view.name==="profile") app.innerHTML=profile();
+  else if(view.name==="test") app.innerHTML=qView();
+  else if(view.name==="result"){
+    const id=view.id;
+    app.innerHTML = T(id).kind==="iq"?iqResult(): id==="bigfive"?big5Result(): id==="types"?typesResult(): discResult();
+  }
+}
+
+/* ============ التفاعل ============ */
+let advTimer=null;
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  if(b.dataset.go){resetArm=null;return go(b.dataset.go);}
+  if(b.dataset.open){const id=b.dataset.open;review.open=false;review.err=false;resetArm=null;return go(store.done[id]?"result":"test",id);}
+  if(b.dataset.ans!==undefined){
+    const id=view.id, A=answers(id), i=store.idx[id]||0; A[i]=+b.dataset.ans; save();
+    clearTimeout(advTimer); render();
+    if(i<29) advTimer=setTimeout(()=>{store.idx[id]=Math.min(29,i+1);save();render();},260);
+    return;
+  }
+  if(b.dataset.step){clearTimeout(advTimer);const id=view.id;store.idx[id]=Math.max(0,Math.min(29,(store.idx[id]||0)+ +b.dataset.step));save();return render();}
+  if(b.dataset.jump){clearTimeout(advTimer);store.idx[view.id]=+b.dataset.jump;save();return render();}
+  if(b.dataset.finish){store.done[view.id]=true;save();review.open=false;return go("result",view.id);}
+  if(b.dataset.reset){const id=b.dataset.reset;
+    if(resetArm!==id){resetArm=id;return render();}
+    resetArm=null;delete store.done[id];store.ans[id]=new Array(30).fill(null);store.idx[id]=0;save();return go("test",id);}
+});
+document.addEventListener("submit",e=>{
+  if(e.target.id!=="lockf")return; e.preventDefault();
+  if(fnv(normAr($("#code").value||""))===CODEHASH){review.open=true;review.err=false;}else{review.err=true;}
+  render();
+});
+document.addEventListener("keydown",e=>{
+  if(view.name!=="test"||e.target.tagName==="INPUT")return;
+  const n="123456".indexOf(e.key); const ai="١٢٣٤٥٦".indexOf(e.key); const k=n>=0?n:ai;
+  if(k>=0){const btn=document.querySelector(`[data-ans="${k}"]`); if(btn) btn.click();}
+});
+render();
+</script>
+
+</body>
+</html>
